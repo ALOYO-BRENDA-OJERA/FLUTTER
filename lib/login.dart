@@ -76,7 +76,15 @@ class Login extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      // Handle login
+                      // Show a snackbar message
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('You have successfully logged in'),
+                          duration: Duration(seconds: 2), // Optional: control display time
+                          backgroundColor: Colors.green,
+                          
+                        ),
+                      );
                     }
                   },
                   child: const Text('Login'),
